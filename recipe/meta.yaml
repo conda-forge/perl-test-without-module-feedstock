@@ -1,13 +1,13 @@
 {% set name = "perl-test-without-module" %}
-{% set version = "0.20" %}
-{% set sha256 = "8e9aeb7c32a6c6d0b8a93114db2a8c072721273a9d9a2dd4f9ca86cfd28aa524" %}
+{% set version = "0.23" %}
+{% set sha256 = "8289e1cd7f57017a816ab4127e29ecd7a754ae7cd5c037c41b3b3bf849c21d21" %}
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
-  url: https://cpan.metacpan.org/authors/id/C/CO/CORION/Test-Without-Module-0.20.tar.gz
+  url: https://cpan.metacpan.org/authors/id/C/CO/CORION/Test-Without-Module-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -37,9 +37,7 @@ about:
   license: GPL-1.0-or-later OR Artistic-1.0-Perl
   license_family: OTHER
   summary: 'Test fallback behaviour in absence of modules'
-  license_file:
-    - {{ environ["PREFIX"] }}/man/man1/perlartistic.1
-    - {{ environ["PREFIX"] }}/man/man1/perlgpl.1
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
